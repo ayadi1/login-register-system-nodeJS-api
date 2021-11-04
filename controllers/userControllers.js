@@ -19,8 +19,16 @@ const add_user = async (req, res) => {
 };
 const get_one_user = async (req, res) => {
   try {
+    const { id: userID } = req.params;
+    const user = await UserModule.findById(userID);
+    if(!user){
+      return res.json({ success: false, msg: "non users fund" });
+    }
+    res.json({ success: true, user });
+
   } catch (error) {
-    res.json({ error });
+    return res.json({ success: false, msg: `non user fund with id : ${req.params.id}`});
+
   }
 };
 const update_user = async (req, res) => {
