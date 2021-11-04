@@ -1,0 +1,1 @@
+you have to add .env file and add HOST_NAME

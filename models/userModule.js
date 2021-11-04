@@ -3,11 +3,12 @@ const mongoose = require("mongoose");
 const UserShema = mongoose.Schema({
   email: {
     type: String,
-    require: [true, "email is require"],
+    required: [true, "email is require"],
+    trim: true,
   },
   password: {
     type: String,
-    require: [true, "password is require"],
+    required: [true, "password is require"],
   },
   status: {
     type: Boolean,
@@ -15,4 +16,4 @@ const UserShema = mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('User',UserShema)
+module.exports = mongoose.model("User", UserShema);
