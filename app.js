@@ -1,6 +1,8 @@
 const express = require('express');
 const connectDB = require('./db/connect');
 require('dotenv').config()
+const userRoute = require('./routers/userRouter');
+const defultRoute = require('./routers/defultRoute')
 const app = express();
 
 // app use json parce
@@ -8,7 +10,8 @@ app.use(express.json());
 
 
 // app use route
-
+app.use('/api/user',userRoute);
+app.use(defultRoute)
 
 
 
