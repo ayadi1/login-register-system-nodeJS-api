@@ -71,19 +71,36 @@ const login_user = async (req, res) => {
     if (!passwordChecker) {
       return res.json({ success: false, msg: "password not work" });
     }
-    res.json({ success: true });
+    req.session.user = { userEmail: email, userID: user._id };
+    res.json({ success: true, session: req.session });
   } catch (error) {
-    //   res.json({success: false,})
+    res.json({ success: false });
   }
 };
 // login user function end
 
+//! update user function start
 const update_user = async (req, res) => {
   try {
+    let body = req.body;
+    if (body.password) {
+      body.password = hash_password(body.password);
+    }
+    const { id: userID } = req.body;
+    const user = await UserModule.findById(userID);
+    if (!user) {
+      return res.json({ success: false });
+    }
+    const newUserData = await UserModule.findByIdAndUpdate(userID, body, {
+      runValidators: true,
+      new: true,
+    });
+    res.json({ newUserData });
   } catch (error) {
-    res.json({ error });
+    res.json({ success: false });
   }
 };
+// update user function end
 
 const delete_user = async (req, res) => {
   try {
