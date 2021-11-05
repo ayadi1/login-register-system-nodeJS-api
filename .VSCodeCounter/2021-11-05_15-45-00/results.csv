@@ -1,0 +1,14 @@
+"filename", "language", "JSON", "JavaScript", "Markdown", "comment", "blank", "total"
+"c:\Users\root\Desktop\apps\web\login-register-system\README.md", "Markdown", 0, 0, 1, 0, 0, 1
+"c:\Users\root\Desktop\apps\web\login-register-system\app.js", "JavaScript", 0, 26, 0, 5, 4, 35
+"c:\Users\root\Desktop\apps\web\login-register-system\controllers\userControllers.js", "JavaScript", 0, 134, 0, 19, 6, 159
+"c:\Users\root\Desktop\apps\web\login-register-system\db\connect.js", "JavaScript", 0, 5, 0, 0, 3, 8
+"c:\Users\root\Desktop\apps\web\login-register-system\middleware\authUser.js", "JavaScript", 0, 7, 0, 0, 0, 7
+"c:\Users\root\Desktop\apps\web\login-register-system\middleware\password.js", "JavaScript", 0, 11, 0, 0, 2, 13
+"c:\Users\root\Desktop\apps\web\login-register-system\middleware\user_checker.js", "JavaScript", 0, 14, 0, 0, 3, 17
+"c:\Users\root\Desktop\apps\web\login-register-system\models\userModule.js", "JavaScript", 0, 17, 0, 0, 3, 20
+"c:\Users\root\Desktop\apps\web\login-register-system\package-lock.json", "JSON", 2523, 0, 0, 0, 1, 2524
+"c:\Users\root\Desktop\apps\web\login-register-system\package.json", "JSON", 21, 0, 0, 0, 1, 22
+"c:\Users\root\Desktop\apps\web\login-register-system\routers\defultRoute.js", "JavaScript", 0, 12, 0, 0, 4, 16
+"c:\Users\root\Desktop\apps\web\login-register-system\routers\userRouter.js", "JavaScript", 0, 21, 0, 0, 3, 24
+"Total", "-", 2544, 247, 1, 24, 30, 2846

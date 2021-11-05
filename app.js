@@ -27,7 +27,7 @@ app.use(defultRoute);
 // starte server function
 const start = async () => {
   await connectDB(process.env.HOST_NAME);
-  app.listen(5000, () => {
+  app.listen(process.env.PORT || 5000, () => {
     console.log("your server is up in port 5000...");
   });
 };

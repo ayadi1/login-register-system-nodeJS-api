@@ -1,0 +1,43 @@
+Date : 2021-11-05 15:45:00
+Directory : c:\Users\root\Desktop\apps\web\login-register-system
+Total : 12 files,  2792 codes, 24 comments, 30 blanks, all 2846 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JSON       |          2 |      2,544 |          0 |          2 |      2,546 |
+| JavaScript |          9 |        247 |         24 |         28 |        299 |
+| Markdown   |          1 |          1 |          0 |          0 |          1 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++-------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                | files      | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                   |         12 |      2,792 |         24 |         30 |      2,846 |
+| controllers                                                                         |          1 |        134 |         19 |          6 |        159 |
+| db                                                                                  |          1 |          5 |          0 |          3 |          8 |
+| middleware                                                                          |          3 |         32 |          0 |          5 |         37 |
+| models                                                                              |          1 |         17 |          0 |          3 |         20 |
+| routers                                                                             |          2 |         33 |          0 |          7 |         40 |
++-------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                            | language   | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\Users\root\Desktop\apps\web\login-register-system\README.md                      | Markdown   |          1 |          0 |          0 |          1 |
+| c:\Users\root\Desktop\apps\web\login-register-system\app.js                         | JavaScript |         26 |          5 |          4 |         35 |
+| c:\Users\root\Desktop\apps\web\login-register-system\controllers\userControllers.js | JavaScript |        134 |         19 |          6 |        159 |
+| c:\Users\root\Desktop\apps\web\login-register-system\db\connect.js                  | JavaScript |          5 |          0 |          3 |          8 |
+| c:\Users\root\Desktop\apps\web\login-register-system\middleware\authUser.js         | JavaScript |          7 |          0 |          0 |          7 |
+| c:\Users\root\Desktop\apps\web\login-register-system\middleware\password.js         | JavaScript |         11 |          0 |          2 |         13 |
+| c:\Users\root\Desktop\apps\web\login-register-system\middleware\user_checker.js     | JavaScript |         14 |          0 |          3 |         17 |
+| c:\Users\root\Desktop\apps\web\login-register-system\models\userModule.js           | JavaScript |         17 |          0 |          3 |         20 |
+| c:\Users\root\Desktop\apps\web\login-register-system\package-lock.json              | JSON       |      2,523 |          0 |          1 |      2,524 |
+| c:\Users\root\Desktop\apps\web\login-register-system\package.json                   | JSON       |         21 |          0 |          1 |         22 |
+| c:\Users\root\Desktop\apps\web\login-register-system\routers\defultRoute.js         | JavaScript |         12 |          0 |          4 |         16 |
+| c:\Users\root\Desktop\apps\web\login-register-system\routers\userRouter.js          | JavaScript |         21 |          0 |          3 |         24 |
+| Total                                                                               |            |      2,792 |         24 |         30 |      2,846 |
++-------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
