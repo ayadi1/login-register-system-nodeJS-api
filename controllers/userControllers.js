@@ -62,11 +62,13 @@ const login_user = async (req, res) => {
   try {
     const { email, password } = req.body;
     const userNotExiste = await check_if_user_existe(email);
+    // chech if email existe if existe reture true if email existe
     if (userNotExiste) {
       return res.status(404).json({ success: false, msg: "email not work" });
     }
     const user = await UserModule.findOne({ email });
     const hash = user.password;
+    // check if password match or not
     const passwordChecker = await password_checker(password, hash);
     if (!passwordChecker) {
       return res.status(404).json({ success: false, msg: "password not work" });
@@ -82,19 +84,29 @@ const login_user = async (req, res) => {
 //! update user function start
 const update_user = async (req, res) => {
   try {
+    // check if user logged in
+    if (!req.session.user) {
+      return res.status(403).json({ success: false, msg: "you have to login" });
+    }
     let body = req.body;
+    // check if user wanna update your password for hashed
     if (body.password) {
       body.password = hash_password(body.password);
     }
-    const { id: userID } = req.body;
-    const user = await UserModule.findById(userID);
+    const UpdatedUserID = req.session.user.userID;
+    // checke if user existe
+    const user = await UserModule.findById(UpdatedUserID);
     if (!user) {
       return res.status(404).json({ success: false });
     }
-    const newUserData = await UserModule.findByIdAndUpdate(userID, body, {
-      runValidators: true,
-      new: true,
-    });
+    const newUserData = await UserModule.findByIdAndUpdate(
+      UpdatedUserID,
+      body,
+      {
+        runValidators: true,
+        new: true,
+      }
+    );
     res.json({ newUserData });
   } catch (error) {
     res.status(500).json({ success: false });
@@ -102,19 +114,39 @@ const update_user = async (req, res) => {
 };
 // update user function end
 
+//! delete user function start
 const delete_user = async (req, res) => {
   try {
+    // check if user logged in
+    if (!req.session.user) {
+      return res.status(403).json({ success: false, msg: "you have to login" });
+    }
+    const deletetedUserID = req.session.user.userID;
     const { id: userID } = req.body;
+    // check if user try to delete ather user
+    if (deletetedUserID != userID) {
+      return res
+        .status(403)
+        .json({ success: false, msg: "you don't have permission to do that" });
+    }
     const user = await UserModule.findByIdAndDelete(userID);
     if (!user) {
-      return res.status(404).json({ success: false });
+      return res.status(404).json({ success: false, mes: "user not fund" });
     }
-    res.json({ success: true });
+    res.json({ success: true, msg: "user deleted" });
   } catch (error) {
-    res.status(500).json({ success: false });
+    res.status(500).json({ success: false, msg: "server error" });
   }
 };
-
+// delete user function end
+const logout = (req, res) => {
+  try {
+    req.session.destroy();
+    res.json({ success: true, msg: "session destroyed" });
+  } catch (error) {
+    res.json({ success: false, msg: "faild to destroy swssion" });
+  }
+};
 module.exports = {
   get_all_users,
   add_user,
@@ -122,4 +154,5 @@ module.exports = {
   update_user,
   delete_user,
   login_user,
+  logout,
 };
